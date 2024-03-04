@@ -10,5 +10,12 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Run tests
+
+  test:
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm ci
+      - name: Run test
         run: npm run test
