@@ -33,5 +33,5 @@ jobs:
   secret:
     runs-on: ubuntu-latest
     steps:
-      -name: Print secret
-      run: echo ${{secrets.NEST_ACTIONS_VERSION}}
+     - name: Print secret
+       run: echo ${{secrets.NEST_ACTIONS_VERSION}}
