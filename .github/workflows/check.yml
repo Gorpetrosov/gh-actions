@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        using: 'node20'
+        main: 'main.js'
       - name: Install deps
         run: npm ci
       - name: Lint
