@@ -30,3 +30,8 @@ jobs:
         run: npm ci
       - name: Run test
         run: npm run test
+  secret:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Print secret
+      run: echo ${{secrets.NEST_ACTIONS_VERSION}}
