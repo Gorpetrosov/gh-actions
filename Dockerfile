@@ -1,14 +1,14 @@
 FROM node:20-alpine as build
 WORKDIR /opt/app
-ADD *.json .
+ADD package*.json ./
 RUN npm ci
 ADD . .
-RUN npm run build
+RUN npm run build  --prod
 
 FROM node:20-alpine
 WORKDIR /opt/app
 
 COPY --from=build /opt/app/dist ./dist
-ADD *.json .
+ADD package*.json ./
 RUN npm ci --omit=dev
 CMD ["node", "./dist/main.js"]
